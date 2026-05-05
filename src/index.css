@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #03A9F4;
+  --color-primary-dark: #0288D1;
+  --color-primary-light: #B3E5FC;
+}
+
+body {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
+  @apply bg-gray-50 text-gray-900 antialiased;
+}
