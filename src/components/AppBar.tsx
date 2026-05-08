@@ -1,11 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { RotateCcw, Settings, Home } from "lucide-react";
+import { RotateCcw, Settings, Home, ClipboardCheck } from "lucide-react";
 
 export default function AppBar() {
   const location = useLocation();
 
   const navItems = [
     { path: "/", icon: Home, label: "ホーム" },
+    { path: "/mock-exam", icon: ClipboardCheck, label: "模試" },
     { path: "/review", icon: RotateCcw, label: "復習" },
     { path: "/settings", icon: Settings, label: "設定" },
   ];

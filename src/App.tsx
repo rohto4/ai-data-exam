@@ -6,6 +6,7 @@ import SectionDetail from "./pages/SectionDetail";
 import Quiz from "./pages/Quiz";
 import Review from "./pages/Review";
 import Settings from "./pages/Settings";
+import MockExam from "./pages/MockExam";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/quiz/:sectionId" element={<Quiz />} />
           <Route path="/review" element={<Review />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/mock-exam" element={<MockExam />} />
         </Routes>
       </Layout>
     </BrowserRouter>
