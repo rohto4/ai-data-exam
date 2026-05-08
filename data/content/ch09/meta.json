@@ -1,0 +1,41 @@
+{
+  "chapterId": "ch09",
+  "title": "第9章 AI倫理・ガバナンス・法制度",
+  "sections": [
+    {
+      "id": "ch09-sec01",
+      "chapterId": "ch09",
+      "title": "9-1 AI倫理の基本原則とガイドライン",
+      "quizCount": 10,
+      "contentPath": "content/ch09/sec01.md"
+    },
+    {
+      "id": "ch09-sec02",
+      "chapterId": "ch09",
+      "title": "9-2 バイアス・フェアネスと差別防止",
+      "quizCount": 10,
+      "contentPath": "content/ch09/sec02.md"
+    },
+    {
+      "id": "ch09-sec03",
+      "chapterId": "ch09",
+      "title": "9-3 説明可能なAI（XAI）",
+      "quizCount": 10,
+      "contentPath": "content/ch09/sec03.md"
+    },
+    {
+      "id": "ch09-sec04",
+      "chapterId": "ch09",
+      "title": "9-4 プライバシー保護と匿名化技術",
+      "quizCount": 8,
+      "contentPath": "content/ch09/sec04.md"
+    },
+    {
+      "id": "ch09-sec05",
+      "chapterId": "ch09",
+      "title": "9-5 AIと知的財産権・著作権・国内外規制",
+      "quizCount": 10,
+      "contentPath": "content/ch09/sec05.md"
+    }
+  ]
+}

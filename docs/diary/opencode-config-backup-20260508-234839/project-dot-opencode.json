@@ -1,0 +1,72 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "oh-my-openagent@latest"
+  ],
+  "enabled_providers": ["openai", "chutes", "xiaomi"],
+  "disabled_providers": [],
+  "provider": {
+    "xiaomi-": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Xiaomi MiMo",
+      "options": {
+        "baseURL": "https://api.xiaomimimo.com/v1",
+        "timeout": 600000,
+        "chunkTimeout": 45000
+      },
+      "models": {
+        "mimo-v2.5-pro": {
+          "id": "mimo-v2.5-pro",
+          "name": "MiMo V2.5 Pro"
+        },
+        "mimo-v2.5": {
+          "id": "mimo-v2.5",
+          "name": "MiMo V2.5"
+        },
+        "mimo-v2-pro": {
+          "id": "mimo-v2-pro",
+          "name": "MiMo V2 Pro"
+        },
+        "mimo-v2-omni": {
+          "id": "mimo-v2-omni",
+          "name": "MiMo V2 Omni"
+        },
+        "mimo-v2-flash": {
+          "id": "mimo-v2-flash",
+          "name": "MiMo V2 Flash"
+        }
+      }
+    },
+    "xiaomi": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Xiaomi MiMo",
+      "options": {
+        "baseURL": "https://api.xiaomimimo.com/v1",
+        "timeout": 600000,
+        "chunkTimeout": 45000
+      },
+      "models": {
+        "mimo-v2.5-pro": {
+          "id": "mimo-v2.5-pro",
+          "name": "MiMo V2.5 Pro"
+        },
+        "mimo-v2.5": {
+          "id": "mimo-v2.5",
+          "name": "MiMo V2.5"
+        },
+        "mimo-v2-pro": {
+          "id": "mimo-v2-pro",
+          "name": "MiMo V2 Pro"
+        },
+        "mimo-v2-omni": {
+          "id": "mimo-v2-omni",
+          "name": "MiMo V2 Omni"
+        },
+        "mimo-v2-flash": {
+          "id": "mimo-v2-flash",
+          "name": "MiMo V2 Flash"
+        }
+      }
+    }
+  }
+}

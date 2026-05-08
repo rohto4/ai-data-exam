@@ -1,0 +1,34 @@
+{
+  "chapterId": "ch01",
+  "title": "第1章 データ・AIの基礎と戦略",
+  "sections": [
+    {
+      "id": "ch01-sec01",
+      "chapterId": "ch01",
+      "title": "1-1 DXとデータドリブン経営の基礎",
+      "quizCount": 10,
+      "contentPath": "content/ch01/sec01.md"
+    },
+    {
+      "id": "ch01-sec02",
+      "chapterId": "ch01",
+      "title": "1-2 データリテラシーとAIの基礎知識",
+      "quizCount": 10,
+      "contentPath": "content/ch01/sec02.md"
+    },
+    {
+      "id": "ch01-sec03",
+      "chapterId": "ch01",
+      "title": "1-3 ビジネスKPI設計とROI試算",
+      "quizCount": 10,
+      "contentPath": "content/ch01/sec03.md"
+    },
+    {
+      "id": "ch01-sec04",
+      "chapterId": "ch01",
+      "title": "1-4 AI実装の準備度とロードマップ",
+      "quizCount": 8,
+      "contentPath": "content/ch01/sec04.md"
+    }
+  ]
+}

@@ -7,6 +7,7 @@
 3. 文字化けしたテンプレートをそのまま展開しない。意図と構成を保って、日本語の文書として作り直す。
 4. secret、トークン、Cookie、未公開の認証情報をリポジトリに書かない。
 5. 試験勉強サイトとして、著作権、個人情報、解答の正確性、誤学習リスクを常に考慮する。
+6. `docs/candi-ref/tech-stack.md` の Teams-work / コミット / 復帰ルールは、本PJの実務上の優先指針として扱う。
 
 ## PJの扱い
 
@@ -31,6 +32,15 @@
 7. 必要に応じて `docs/guide/opencode/oc-active-init.md`
 8. 必要に応じて `.agents/skills/*/SKILL.md`
 9. 必要に応じて `commands/*.md`
+
+## Teams-work の扱い
+
+本PJでは、`docs/candi-ref/tech-stack.md` に記載された Teams-work 系のルールを重視する。
+
+- コミットは、各フェーズや大きな分割点、検証通過直後など適切なタイミングで行う。
+- 失敗・ハング・復帰の経緯は、必要に応じて `docs/diary/YYYYMMDD-teamswork.md` に記録する。
+- 途中復帰が必要な場合は、最後に成功した地点を明記し、責務を小さく切り直して再開する。
+- サブエージェント連携や長文作業では、`tech-stack.md` の連携制約を優先して参照する。
 
 ## OpenCode設定の持ち込み
 

@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import type { StorageAPI, ProgressData, MistakeHistory, Settings, Quiz } from '../lib/storage';
+import type { ProgressData, MistakeHistory, Settings } from '../lib/storage';
 
 describe('Storage Types (Hello World)', () => {
   beforeEach(() => {

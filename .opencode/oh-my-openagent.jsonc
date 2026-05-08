@@ -16,9 +16,10 @@
   },
 
   "background_task": {
-    "defaultConcurrency": 1,
+    "defaultConcurrency": 2,
     "staleTimeoutMs": 420000,
     "providerConcurrency": {
+      "openai": 2,
       "chutes": 1
     }
   },
@@ -37,15 +38,17 @@
   // Conductor: 重めの統括。明示指定時だけ使う。
   "agents": {
     "sisyphus": {
-      "model": "chutes/kimi-k2.5-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 400000,
       "fallback_models": [
-        "chutes/qwen3-32b-tee"
+        "chutes/qwen3-coder-next-tee"
       ]
     },
 
     // Main implementer: コーディング特化
     "hephaestus": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 400000,
       "fallback_models": [
         "chutes/qwen3-coder-next-tee"
       ]
@@ -53,7 +56,8 @@
 
     // Planner: Thinking 特化で計画立案
     "prometheus": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 400000,
       "fallback_models": [
         "chutes/deepseek-r1-0528-tee"
       ],
@@ -62,7 +66,8 @@
 
     // Read-only architecture/debug: 深い推論
     "oracle": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/deepseek-r1-0528-tee"
       ],
@@ -71,18 +76,21 @@
 
     // Cheap internal exploration: 超軽量
     "explore": {
-      "model": "chutes/gemma-3-4b"
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000
     },
 
     // External research / web: 高速
     "librarian": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": ["chutes/qwen3-32b-tee"]
     },
 
     // Images / UI screenshots: ビジョン
     "multimodal-looker": {
-      "model": "chutes/kimi-k2.5-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/glm-4.6v",
         "chutes/qwen2-5-vl-32b"
@@ -91,7 +99,8 @@
 
     // Pre-planning consultant: 推論系
     "metis": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/deepseek-r1-0528-tee"
       ],
@@ -100,7 +109,8 @@
 
     // Plan review / QA
     "momus": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/tng-r1t2-chimera-tee",
         "chutes/glm-4.7-tee"
@@ -110,7 +120,8 @@
 
     // Documentation / longform: 長文脈モデル
     "atlas": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 400000,
       "fallback_models": [
         "chutes/kimi-k2.5-tee"
       ]
@@ -120,17 +131,20 @@
   // --- Categories ---
   "categories": {
     "quick": {
-      "model": "chutes/gemma-3-4b",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "description": "Single-file small changes / quick checks"
     },
 
     "unspecified-low": {
-      "model": "chutes/gemma-3-4b",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "description": "Low-effort tasks, short analysis"
     },
 
     "unspecified-high": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/deepseek-v3.2-tee"
       ],
@@ -138,7 +152,8 @@
     },
 
     "deep": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/deepseek-r1-0528-tee"
       ],
@@ -146,7 +161,8 @@
     },
 
     "ultrabrain": {
-      "model": "chutes/kimi-k2.5-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/qwen3-32b-tee"
       ],
@@ -154,7 +170,8 @@
     },
 
     "writing": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/kimi-k2.5-tee"
       ],
@@ -162,7 +179,8 @@
     },
 
     "visual-engineering": {
-      "model": "chutes/kimi-k2.5-tee",
+      "model": "openai/gpt-5.4-mini",
+      "maxTokens": 200000,
       "fallback_models": [
         "chutes/glm-4.6v",
         "chutes/qwen2-5-vl-32b"

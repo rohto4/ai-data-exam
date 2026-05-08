@@ -1,24 +1,27 @@
-import { useState } from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Dashboard from "./pages/Dashboard";
+import ChapterDetail from "./pages/ChapterDetail";
+import SectionDetail from "./pages/SectionDetail";
+import Quiz from "./pages/Quiz";
+import Review from "./pages/Review";
+import Settings from "./pages/Settings";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-primary-light to-white">
-      <h1 className="text-3xl font-bold text-primary mb-4">
-        データ・AI試験対策
-      </h1>
-      <p className="text-gray-600 mb-6">
-        Vite + React + TypeScript + Tailwind CSS
-      </p>
-      <button
-        onClick={() => setCount((c) => c + 1)}
-        className="px-6 py-2 bg-primary hover:bg-primary-dark text-white rounded-lg shadow transition-colors"
-      >
-        count is {count}
-      </button>
-    </div>
-  )
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/chapters/:chapterId" element={<ChapterDetail />} />
+          <Route path="/sections/:sectionId" element={<SectionDetail />} />
+          <Route path="/quiz/:sectionId" element={<Quiz />} />
+          <Route path="/review" element={<Review />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

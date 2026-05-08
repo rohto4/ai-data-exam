@@ -1,0 +1,34 @@
+{
+  "chapterId": "ch10",
+  "title": "第10章 実践的データ・AIプロジェクト",
+  "sections": [
+    {
+      "id": "ch10-sec01",
+      "chapterId": "ch10",
+      "title": "10-1 プロジェクト設計と要件定義",
+      "quizCount": 10,
+      "contentPath": "content/ch10/sec01.md"
+    },
+    {
+      "id": "ch10-sec02",
+      "chapterId": "ch10",
+      "title": "10-2 アジャイル開発とPoC・パイロット",
+      "quizCount": 10,
+      "contentPath": "content/ch10/sec02.md"
+    },
+    {
+      "id": "ch10-sec03",
+      "chapterId": "ch10",
+      "title": "10-3 エッジAIとデバイス最適化・コスト設計",
+      "quizCount": 8,
+      "contentPath": "content/ch10/sec03.md"
+    },
+    {
+      "id": "ch10-sec04",
+      "chapterId": "ch10",
+      "title": "10-4 組織変革とデータ・AI活用の将来展望",
+      "quizCount": 8,
+      "contentPath": "content/ch10/sec04.md"
+    }
+  ]
+}

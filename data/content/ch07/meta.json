@@ -1,0 +1,62 @@
+{
+  "chapterId": "ch07",
+  "title": "第7章 生成AIと大規模言語モデル（LLM）",
+  "sections": [
+    {
+      "id": "ch07-sec01",
+      "chapterId": "ch07",
+      "title": "7-1 生成AIの基礎と種類（GAN・VAE・拡散モデル）",
+      "quizCount": 8,
+      "contentPath": "content/ch07/sec01.md"
+    },
+    {
+      "id": "ch07-sec02",
+      "chapterId": "ch07",
+      "title": "7-2 大規模言語モデル（LLM）の仕組み",
+      "quizCount": 10,
+      "contentPath": "content/ch07/sec02.md"
+    },
+    {
+      "id": "ch07-sec03",
+      "chapterId": "ch07",
+      "title": "7-3 プロンプトエンジニアリング",
+      "quizCount": 10,
+      "contentPath": "content/ch07/sec03.md"
+    },
+    {
+      "id": "ch07-sec04",
+      "chapterId": "ch07",
+      "title": "7-4 RAG（検索拡張生成）",
+      "quizCount": 10,
+      "contentPath": "content/ch07/sec04.md"
+    },
+    {
+      "id": "ch07-sec05",
+      "chapterId": "ch07",
+      "title": "7-5 Fine-tuningとアダプタ手法（LoRA・QLoRA）",
+      "quizCount": 10,
+      "contentPath": "content/ch07/sec05.md"
+    },
+    {
+      "id": "ch07-sec06",
+      "chapterId": "ch07",
+      "title": "7-6 AIエージェントとマルチエージェントシステム",
+      "quizCount": 10,
+      "contentPath": "content/ch07/sec06.md"
+    },
+    {
+      "id": "ch07-sec07",
+      "chapterId": "ch07",
+      "title": "7-7 マルチモーダルAIと画像生成",
+      "quizCount": 8,
+      "contentPath": "content/ch07/sec07.md"
+    },
+    {
+      "id": "ch07-sec08",
+      "chapterId": "ch07",
+      "title": "7-8 LLMの運用と最適化",
+      "quizCount": 8,
+      "contentPath": "content/ch07/sec08.md"
+    }
+  ]
+}

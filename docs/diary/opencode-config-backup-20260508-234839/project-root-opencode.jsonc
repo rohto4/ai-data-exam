@@ -1,0 +1,139 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "plugin": ["oh-my-openagent@latest"],
+
+  // OpenAI + Chutes + Xiaomi 使用
+  "enabled_providers": ["openai", "chutes", "xiaomi"],
+
+  // デフォルトモデル: GPT-5.3-Codex (コーディング特化)
+  "model": "xiaomi/mimo-v2.5-pro",
+  // タイトル生成など軽量タスク用
+  "small_model": "openai/gpt-5.4-nano",
+
+  "provider": {
+    // OpenAI Provider
+    "openai": {
+      "npm": "@ai-sdk/openai",
+      "name": "OpenAI",
+      "options": {
+        "apiKey": "{env:OPENAI_API_KEY}",
+        "timeout": 600000,
+        "chunkTimeout": 45000
+      },
+      "models": {
+        // GPT-5.3-Codex: コーディング特化
+        "gpt-5.3-codex": { 
+          "id": "gpt-5.3-codex", 
+          "name": "GPT-5.3 Codex",
+          "context": 400000,
+          "maxOutput": 128000
+        },
+        // GPT-5.4: 汎用フロンティアモデル
+        "gpt-5.4": { 
+          "id": "gpt-5.4", 
+          "name": "GPT-5.4",
+          "context": 1050000,
+          "maxOutput": 128000
+        },
+        // GPT-5.4-nano: 高速・低コスト
+        "gpt-5.4-nano": { 
+          "id": "gpt-5.4-nano", 
+          "name": "GPT-5.4 Nano",
+          "context": 400000,
+          "maxOutput": 128000
+        },
+        // GPT-5.4-mini: バランス型
+        "gpt-5.4-mini": { 
+          "id": "gpt-5.4-mini", 
+          "name": "GPT-5.4 Mini",
+          "context": 272000,
+          "maxOutput": 128000
+        }
+      }
+    },
+
+    // Chutes Provider (フォールバック用)
+    "chutes": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Chutes",
+      "options": {
+        "baseURL": "https://llm.chutes.ai/v1",
+        "apiKey": "{env:CHUTES_API_KEY}",
+        "timeout": 600000,
+        "chunkTimeout": 45000
+      },
+      "models": {
+        // コーディング特化
+        "qwen3-32b-tee":         { "id": "Qwen/Qwen3-32B-TEE",                        "name": "Qwen3 32B (TEE)" },
+        "qwen3-coder-next-tee":  { "id": "Qwen/Qwen3-Coder-Next-TEE",                 "name": "Qwen3 Coder Next (TEE)" },
+        "deepseek-v3.2-tee":     { "id": "deepseek-ai/DeepSeek-V3.2-TEE",             "name": "DeepSeek V3.2 (TEE)" },
+
+        // 大規模・長文脈
+        "kimi-k2.5-tee":         { "id": "moonshotai/Kimi-K2.5-TEE",                  "name": "Kimi K2.5 (TEE)" },
+        "minimax-m2.5-tee":      { "id": "MiniMaxAI/MiniMax-M2.5-TEE",                "name": "MiniMax M2.5 (TEE)" },
+
+        // 推論系
+        "deepseek-r1-0528-tee":  { "id": "deepseek-ai/DeepSeek-R1-0528-TEE",         "name": "DeepSeek R1 0528 (TEE)" },
+
+        // 高速・軽量
+        "gemma-3-4b":            { "id": "unsloth/gemma-3-4b-it",                    "name": "Gemma 3 4B" }
+      }
+    },
+
+    // Xiaomi MiMo Provider (OpenAI互換)
+    "xiaomi": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Xiaomi MiMo",
+      "options": {
+        "baseURL": "https://api.xiaomimimo.com/v1",
+        "timeout": 600000,
+        "chunkTimeout": 45000
+      },
+      "models": {
+        // MiMo V2.5 Pro: 最新推論・長文脈モデル
+        "mimo-v2.5-pro": {
+          "id": "mimo-v2.5-pro",
+          "name": "MiMo V2.5 Pro",
+          "context": 1048576,
+          "maxOutput": 128000
+        },
+        // MiMo V2.5: 最新汎用モデル
+        "mimo-v2.5": {
+          "id": "mimo-v2.5",
+          "name": "MiMo V2.5",
+          "context": 262144,
+          "maxOutput": 128000
+        },
+        // MiMo V2 Pro: 推論・長文脈
+        "mimo-v2-pro": {
+          "id": "mimo-v2-pro",
+          "name": "MiMo V2 Pro",
+          "context": 1048576,
+          "maxOutput": 128000
+        },
+        // MiMo V2 Omni: マルチモーダル
+        "mimo-v2-omni": {
+          "id": "mimo-v2-omni",
+          "name": "MiMo V2 Omni",
+          "context": 262144,
+          "maxOutput": 128000
+        },
+        // MiMo V2 Flash: 高速汎用
+        "mimo-v2-flash": {
+          "id": "mimo-v2-flash",
+          "name": "MiMo V2 Flash",
+          "context": 262144,
+          "maxOutput": 64000
+        }
+      }
+    }
+  },
+
+  // 長いセッションでコンテキスト溢れを防ぐ
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  }
+}

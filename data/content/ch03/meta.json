@@ -1,0 +1,48 @@
+{
+  "chapterId": "ch03",
+  "title": "第3章 データエンジニアリング",
+  "sections": [
+    {
+      "id": "ch03-sec01",
+      "chapterId": "ch03",
+      "title": "3-1 データ収集とETL/ELTパイプライン",
+      "quizCount": 10,
+      "contentPath": "content/ch03/sec01.md"
+    },
+    {
+      "id": "ch03-sec02",
+      "chapterId": "ch03",
+      "title": "3-2 データベース設計と選定",
+      "quizCount": 10,
+      "contentPath": "content/ch03/sec02.md"
+    },
+    {
+      "id": "ch03-sec03",
+      "chapterId": "ch03",
+      "title": "3-3 データレイク・データウェアハウス・データレイクハウス",
+      "quizCount": 10,
+      "contentPath": "content/ch03/sec03.md"
+    },
+    {
+      "id": "ch03-sec04",
+      "chapterId": "ch03",
+      "title": "3-4 リアルタイム処理とストリーミング",
+      "quizCount": 8,
+      "contentPath": "content/ch03/sec04.md"
+    },
+    {
+      "id": "ch03-sec05",
+      "chapterId": "ch03",
+      "title": "3-5 分散処理フレームワーク",
+      "quizCount": 8,
+      "contentPath": "content/ch03/sec05.md"
+    },
+    {
+      "id": "ch03-sec06",
+      "chapterId": "ch03",
+      "title": "3-6 クラウドデータ基盤とマルチクラウド戦略",
+      "quizCount": 8,
+      "contentPath": "content/ch03/sec06.md"
+    }
+  ]
+}

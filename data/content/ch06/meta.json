@@ -1,0 +1,62 @@
+{
+  "chapterId": "ch06",
+  "title": "第6章 深層学習とニューラルネットワーク",
+  "sections": [
+    {
+      "id": "ch06-sec01",
+      "chapterId": "ch06",
+      "title": "6-1 ニューラルネットワークの仕組みと学習",
+      "quizCount": 10,
+      "contentPath": "content/ch06/sec01.md"
+    },
+    {
+      "id": "ch06-sec02",
+      "chapterId": "ch06",
+      "title": "6-2 CNN（畳み込みニューラルネットワーク）",
+      "quizCount": 10,
+      "contentPath": "content/ch06/sec02.md"
+    },
+    {
+      "id": "ch06-sec03",
+      "chapterId": "ch06",
+      "title": "6-3 RNNとLSTM・GRU",
+      "quizCount": 8,
+      "contentPath": "content/ch06/sec03.md"
+    },
+    {
+      "id": "ch06-sec04",
+      "chapterId": "ch06",
+      "title": "6-4 Transformerアーキテクチャ",
+      "quizCount": 10,
+      "contentPath": "content/ch06/sec04.md"
+    },
+    {
+      "id": "ch06-sec05",
+      "chapterId": "ch06",
+      "title": "6-5 事前学習モデルと転移学習",
+      "quizCount": 10,
+      "contentPath": "content/ch06/sec05.md"
+    },
+    {
+      "id": "ch06-sec06",
+      "chapterId": "ch06",
+      "title": "6-6 深層学習フレームワーク（PyTorch/TensorFlow）",
+      "quizCount": 8,
+      "contentPath": "content/ch06/sec06.md"
+    },
+    {
+      "id": "ch06-sec07",
+      "chapterId": "ch06",
+      "title": "6-7 生成モデル（GAN・VAE・拡散モデル）",
+      "quizCount": 8,
+      "contentPath": "content/ch06/sec07.md"
+    },
+    {
+      "id": "ch06-sec08",
+      "chapterId": "ch06",
+      "title": "6-8 深層学習の実践テクニック",
+      "quizCount": 8,
+      "contentPath": "content/ch06/sec08.md"
+    }
+  ]
+}

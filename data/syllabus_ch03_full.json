@@ -1,0 +1,68 @@
+{
+  "chapterId": "ch03",
+  "title": "第3章 データエンジニアリング",
+  "sections": [
+    {
+      "id": "ch03-sec01",
+      "chapterId": "ch03",
+      "title": "3-1 データ収集とETL/ELTパイプライン",
+      "content": "## データ収集の手法\n\nデータ収集はデータエンジニアリングの第一歩である。適切な収集方法を選定することが、後続の処理品質に大きく影響する。\n\n### データ収集手法の種類\n\n**バッチ処理（Batch Processing）**：\n- 決まった時間間隔でまとめてデータを収集\n- 例：毎日深夜に前日分の売上データを取得\n- 利点：リソース効率が良い、処理が安定\n- 欠点：リアルタイム性がない\n\n**ストリーミング処理（Streaming Processing）**：\n- データが生成された瞬間に逐次収集\n- 例：IoTセンサーデータ、SNS投稿、株価データ\n- 利点：リアルタイム分析が可能\n- 欠点：インフラコストが高い、複雑さ増大\n\n**API連携**：\n- REST API、GraphQL、gRPCなどを介したデータ取得\n- 例：SaaSサービスからのデータ連携\n- 認証方式：OAuth、API Key、JWT\n\n**Webスクレイピング**：\n- Webサイトから自動的にデータを収集\n- 注意：robots.txtの確認、法的リスクの検討\n- 技術：Beautiful Soup、Scrapy、Selenium\n\n### ETLとELTの違い\n\n**ETL（Extract-Transform-Load）**：\n- 抽出→変換→読み込みの順で処理\n- 変換を読み込み前に行う\n- 利点：読み込み後のデータが整っている\n- 欠点：大規模データの変換に時間がかかる\n- 用途：従来型のデータウェアハウス\n\n**ELT（Extract-Load-Transform）**：\n- 抽出→読み込み→変換の順で処理\n- 生データを先に読み込み、後で変換\n- 利点：クラウドの計算リソースで高速変換可能、柔軟性高い\n- 欠点：生データの保存スペースが必要\n- 用途：クラウドデータレイク、ビッグデータ処理\n\n### データパイプライン設計のベストプラクティス\n\n**1. 冪等性（Idempotency）**：\n- 同じ処理を複数回実行しても結果が変わらない設計\n- 障害復旧時の再処理を安全に行える\n\n**2. エラーハンドリング**：\n- 部分的な失敗を許容する設計\n- デッドレターキューによる失敗データの隔離\n\n**3. 監視とアラート**：\n- パイプラインの健全性監視\n- 異常検知時の自動アラート\n\n**4. スキーマ進化**：\n- スキーマ変更への対応戦略\n- 前方互換性・後方互換性の管理\n\n▼覚えておくポイント\n- バッチ vs ストリーミング：用途に応じて選択\n- ETL vs ELT：クラウド時代はELTが主流に\n- 冪等性はパイプライン設計の基本原則\n- エラーハンドリングと監視が運用の鍵",
+      "quizCount": 10
+    },
+    {
+      "id": "ch03-sec02",
+      "chapterId": "ch03",
+      "title": "3-2 データベース設計と選定",
+      "content": "## RDBMS vs NoSQL\n\nデータベース選定は、データの特性やアクセスパターンに応じて行う。\n\n### RDBMS（リレーショナルデータベース）\n\n**特徴**：\n- テーブル構造でデータを管理\n- SQLによるクエリ\n- ACID特性（原子性、一貫性、独立性、耐久性）\n- スキーマが厳密\n\n**主要製品**：\n- PostgreSQL：拡張性が高いオープンソース\n- MySQL：Webアプリケーションで広く使用\n- Oracle：エンタープライズ向け\n- SQL Server：Microsoft製品との統合\n\n**適用場面**：\n- トランザクション処理（OLTP）\n- データ整合性が重要な業務\n- 複雑なJOINが必要な分析\n\n### NoSQLデータベース\n\n**種類と特徴**：\n\n**ドキュメント型（Document）**：\n- JSON形式でデータを保存\n- 例：MongoDB、Firestore\n- スキーマが柔軟\n\n**キー・バリュー型（Key-Value）**：\n- シンプルなキーと値のペア\n- 例：Redis、DynamoDB\n- 高速な読み書き\n\n**ワイドカラム型（Wide Column）**：\n- カラム指向の分散データベース\n- 例：Cassandra、HBase\n- 大規模データの書き込みに強い\n\n**グラフ型（Graph）**：\n- ノードとエッジで関係性を表現\n- 例：Neo4j、Amazon Neptune\n- 複雑な関係性のクエリに最適\n\n### データベース選定の基準\n\n| 観点 | RDBMS | NoSQL |
+|------|-------|-------|
+| データ構造 | 構造化 | 柔軟 |
+| スケーラビリティ | 垂直 | 水平 |
+| 一貫性 | 強い | 最終的 |
+| スキーマ | 厳密 | 柔軟 |
+| クエリ | SQL | 専用API |
+\n### CAP定理\n\n分散システムでは、以下の3つのうち2つしか満たせない。\n\n**C（Consistency：一貫性）**：\n全てのノードが同じデータを見る\n\n**A（Availability：可用性）**：\n全てのリクエストに応答する\n\n**P（Partition tolerance：分割耐性）**：\nネットワーク分離に耐える\n\n**選択肢**：\n- CP：一貫性と分割耐性（例：HBase、MongoDB）\n- AP：可用性と分割耐性（例：Cassandra、DynamoDB）\n- CA：一貫性と可用性（単一ノードのRDBMS）\n\n▼覚えておくポイント\n- RDBMSはACID特性、NoSQLは柔軟性とスケーラビリティ\n- データ特性に応じて適切なDBを選定\n- CAP定理：分散システムで3つ全てを満たすことは不可能",
+      "quizCount": 10
+    },
+    {
+      "id": "ch03-sec03",
+      "chapterId": "ch03",
+      "title": "3-3 データレイク・データウェアハウス・データレイクハウス",
+      "content": "## データレイク（Data Lake）\n\n**定義**：\n生データをそのままの形式で大量に保存するリポジトリ。構造化・半構造化・非構造化データを区別せず蓄積する。\n\n**特徴**：\n- スキーマオンロード（読み込み時にスキーマを適用）\n- 低コストなストレージ（オブジェクトストレージ）\n- 柔軟な分析が可能\n- データスワンプ（沼）化のリスク\n\n**技術**：\n- Amazon S3\n- Azure Data Lake Storage\n- Google Cloud Storage\n- HDFS（Hadoop Distributed File System）\n\n## データウェアハウス（Data Warehouse）\n\n**定義**：\n分析用に最適化された構造化データのリポジトリ。ビジネスインテリジェンス（BI）の基盤となる。\n\n**特徴**：\n- スキーマオンワライト（書き込み時にスキーマを定義）\n- 高いパフォーマンス（列指向ストレージ）\n- データ整合性が高い\n- ETL処理済みのクリーンなデータ\n\n**技術**：\n- Snowflake\n- BigQuery\n- Redshift\n- Azure Synapse Analytics\n\n## データレイクハウス（Data Lakehouse）\n\n**定義**：\nデータレイクの柔軟性とデータウェアハウスのパフォーマンス・整合性を兼ね備えた新しいアーキテクチャ。\n\n**特徴**：\n- 低コストなオブジェクトストレージ上に構築\n- ACIDトランザクションのサポート\n- スキーマ強制とデータバージョニング\n- BIとMLの両方に対応\n\n**テーブルフォーマット**：\n- **Delta Lake**：Databricks開発、ACIDトランザクション、タイムトラベル機能\n- **Apache Iceberg**：Netflix開発、スキーマ進化、パーティション進化\n- **Apache Hudi**：Uber開発、インクリメンタル処理、ストリーム処理との統合\n\n## メダリオンアーキテクチャ（Medallion Architecture）\n\nデータレイク/レイクハウスでの階層的データ管理アプローチ。\n\n**ブロンズ層（Raw）**：\n- 生データをそのまま保存\n- 履歴保持と再処理のための基盤\n\n**シルバー層（Cleaned）**：\n- クレンジング、正規化、重複排除済み\n- 分析に使用可能な状態\n\n**ゴールド層（Aggregated）**：\n- ビジネスロジック適用済み\n- BIツールやMLモデルに直接使用\n- アグリゲーション済み\n\n▼覚えておくポイント\n- データレイク：生データの保存（スキーマオンロード）\n- データウェアハウス：分析用構造化データ（スキーマオンワライト）\n- データレイクハウス：両者の統合（Delta Lake、Iceberg、Hudi）\n- メダリオンアーキテクチャ：ブロンズ→シルバー→ゴールドの3層構成",
+      "quizCount": 10
+    },
+    {
+      "id": "ch03-sec04",
+      "chapterId": "ch03",
+      "title": "3-4 リアルタイム処理とストリーミング",
+      "content": "## ストリーミング処理の基盤技術\n\nリアルタイムデータ処理は、データの価値を時間的に最大化するために重要である。\n\n### Apache Kafka\n\n**特徴**：\n- 分散型ストリーミングプラットフォーム\n- 高スループット、低レイテンシ\n- パブリッシュ・サブスクライブモデル\n- 永続的なログストレージ\n\n**主要概念**：\n- **Topic**：メッセージのカテゴリ（例：user-events）\n- **Partition**：Topicの並列処理単位\n- **Producer**：メッセージを送信する側\n- **Consumer**：メッセージを受信する側\n- **Broker**：Kafkaサーバー\n\n### その他のストリーミング技術\n\n**Apache Flink**：\n- 正確に一度の処理（Exactly-once semantics）\n- イベント時間処理とウォーターマーク\n- 複雑なイベント処理（CEP）\n\n**Apache Spark Streaming**：\n- マイクロバッチ処理\n- Sparkエコシステムとの統合\n- Structured Streaming API\n\n**マネージドサービス**：\n- Amazon Kinesis\n- Google Cloud Dataflow\n- Azure Stream Analytics\n\n### ウィンドウ処理\n\nストリームデータを区切って集計する手法。\n\n**タンブリングウィンドウ（Tumbling Window）**：\n- 重複のない固定サイズのウィンドウ\n- 例：5分ごとの集計\n\n**スライディングウィンドウ（Sliding Window）**：\n- 重複を許すウィンドウ\n- 例：1分ごとに5分間の集計\n\n**セッションウィンドウ（Session Window）**：\n- ユーザーアクティビティに基づく動的ウィンドウ\n- 非アクティブ期間でウィンドウを区切る\n\n### イベント駆動アーキテクチャ\n\n**Kappaアーキテクチャ**：\n- ストリーム処理のみでバッチと統一\n- バッチレイヤーを廃止\n- シンプルなアーキテクチャ\n\n**Lambdaアーキテクチャ**：\n- バッチレイヤーとスピードレイヤーの両立\n- 複雑だが厳密な整合性\n\n▼覚えておくポイント\n- Kafkaは分散型ストリーミングプラットフォームのデファクトスタンダード\n- ウィンドウ処理：タンブリング・スライディング・セッション\n- Kappaアーキテクチャ：ストリーム処理のみでシンプルに\n- Exactly-once処理はデータの重複や欠損を防ぐ",
+      "quizCount": 8
+    },
+    {
+      "id": "ch03-sec05",
+      "chapterId": "ch03",
+      "title": "3-5 分散処理フレームワーク",
+      "content": "## Apache Spark\n\nSparkは、ビッグデータの高速な分散処理を実現する統合分析エンジンである。\n\n**特徴**：\n- メモリ内処理による高速化（Hadoop MapReduceの10〜100倍）\n- バッチ処理とストリーミング処理の統一\n- SQL、Python、Scala、Java、Rに対応\n- 機械学習（MLlib）、グラフ処理（GraphX）も統合\n\n**コア概念**：\n\n**RDD（Resilient Distributed Dataset）**：\n- Sparkの基本的なデータ構造\n- 耐障害性のある分散データセット\n- 低レベルAPI\n\n**DataFrame**：\n- スキーマを持つ分散データ構造\n- SQLライクな操作が可能\n- Catalystオプティマイザによる最適化\n\n**Dataset**：\n- DataFrameに型安全性を追加\n- Scala/Javaのみ対応\n\n**Sparkのコンポーネント**：\n\n- **Spark SQL**：構造化データ処理\n- **Spark Streaming**：リアルタイム処理\n- **MLlib**：機械学習ライブラリ\n- **GraphX**：グラフ処理\n\n## Hadoopエコシステム\n\n**HDFS（Hadoop Distributed File System）**：\n- 分散ファイルシステム\n- 大容量データの保存\n- レプリケーションによる耐障害性\n\n**YARN（Yet Another Resource Negotiator）**：\n- リソース管理\n- ジョブスケジューリング\n\n**MapReduce**：\n- 分散処理のプログラミングモデル\n- 現在はSparkに置き換わりつつある\n\n## 分散処理の課題と対策\n\n**データスキュー（Data Skew）**：\n- 特定のノードに負荷が集中\n- 対策：サンプリング、分割キーの見直し、ソルト追加\n\n**シャッフル（Shuffle）**：\n- ノード間でのデータ移動\n- パフォーマンスボトルネックになりやすい\n- 対策：シャッフル削減、データローカリティの活用\n\n**スケールアウト vs スケールアップ**：\n\n| 項目 | スケールアップ | スケールアウト |
+|------|--------------|--------------|
+| 方法 | サーバーの性能向上 | サーバー数の追加 |
+| 限界 | ハードウェア限界あり | 理論上無限 |
+| コスト | 高価な高性能サーバー | 安価な汎用サーバー |
+| 障害時 | 影響大 | 影響小（分散）|
+\n▼覚えておくポイント\n- Sparkはメモリ内処理で高速、統合分析エンジン\n- DataFrameはスキーマを持ちSQLライクな操作が可能\n- データスキューは分散処理の代表的な課題\n- スケールアウト（水平）がビッグデータの標準",
+      "quizCount": 8
+    },
+    {
+      "id": "ch03-sec06",
+      "chapterId": "ch03",
+      "title": "3-6 クラウドデータ基盤とマルチクラウド戦略",
+      "content": "## 主要クラウドプロバイダーのデータサービス\n\n### AWS（Amazon Web Services）\n\n**ストレージ**：\n- S3：オブジェクトストレージ\n- EBS：ブロックストレージ\n- FSx：ファイルストレージ\n\n**データベース**：\n- RDS：マネージドRDBMS\n- DynamoDB：マネージドNoSQL\n- Redshift：データウェアハウス\n- Keyspaces：マネージドCassandra\n\n**分析・ETL**：\n- Glue：ETLサービス\n- Athena：S3上のクエリサービス\n- EMR：マネージドHadoop/Spark\n- Kinesis：ストリーミングデータ\n\n### Google Cloud Platform（GCP）\n\n**分析基盤**：\n- BigQuery：サーバーレスデータウェアハウス\n- Dataflow：ストリーミング/バッチ処理\n- Dataproc：マネージドSpark/Hadoop\n- Pub/Sub：メッセージングサービス\n\n**データベース**：\n- Cloud SQL：マネージドRDBMS\n- Firestore：ドキュメントDB\n- Bigtable：ワイドカラムDB\n- Spanner：グローバル分散DB\n\n### Microsoft Azure\n\n**分析基盤**：\n- Synapse Analytics：統合分析プラットフォーム\n- Data Factory：ETL/ELTサービス\n- Stream Analytics：リアルタイム分析\n- Databricks：Sparkプラットフォーム\n\n**データベース**：\n- SQL Database：マネージドSQL Server\n- Cosmos DB：グローバル分散NoSQL\n- PostgreSQL/MySQL：マネージドオープンソースDB\n\n## マルチクラウド戦略\n\n**メリット**：\n- ベンダーロックインの回避\n- ベストオブブリードの選択\n- 災害対策（可用性向上）\n- コスト最適化\n\n**課題**：\n- 運用の複雑化\n- スキル要件の増大\n- データ転送コスト\n- セキュリティ管理の複雑化\n\n**実装パターン**：\n\n**クラウドバースト**：\n- 通常時はプライベートクラウド\n- ピーク時にパブリッククラウドを使用\n\n**災害復旧（DR）**：\n- プライマリ：クラウドA\n- セカンダリ：クラウドB\n\n**機能別分散**：\n- 分析：クラウドA（BigQueryなど）\n- アプリケーション：クラウドB\n\n## クラウド選定の基準\n\n| 観点 | 評価ポイント |
+|------|-------------|
+| パフォーマンス | レイテンシ、スループット |
+| コスト | 従量課金、リザーブドインスタンス |
+| 機能 | 必要なサービスの有無 |
+| エコシステム | 既存システムとの親和性 |
+| サポート | SL A、技術サポート |
+\n▼覚えておくポイント\n- AWS：サービス数No.1、エンタープライズ向け\n- GCP：分析・MLに強み、BigQueryが強力\n- Azure：Microsoft製品との統合\n- マルチクラウドはベンダーロックイン回避に有効だが複雑化する",
+      "quizCount": 8
+    }
+  ]
+}

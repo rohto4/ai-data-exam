@@ -1,0 +1,55 @@
+{
+  "chapterId": "ch04",
+  "title": "第4章 統計・分析手法",
+  "sections": [
+    {
+      "id": "ch04-sec01",
+      "chapterId": "ch04",
+      "title": "4-1 記述統計とデータの可視化",
+      "quizCount": 10,
+      "contentPath": "content/ch04/sec01.md"
+    },
+    {
+      "id": "ch04-sec02",
+      "chapterId": "ch04",
+      "title": "4-2 確率分布と仮説検定",
+      "quizCount": 10,
+      "contentPath": "content/ch04/sec02.md"
+    },
+    {
+      "id": "ch04-sec03",
+      "chapterId": "ch04",
+      "title": "4-3 回帰分析と相関分析",
+      "quizCount": 10,
+      "contentPath": "content/ch04/sec03.md"
+    },
+    {
+      "id": "ch04-sec04",
+      "chapterId": "ch04",
+      "title": "4-4 多変量解析の基礎",
+      "quizCount": 8,
+      "contentPath": "content/ch04/sec04.md"
+    },
+    {
+      "id": "ch04-sec05",
+      "chapterId": "ch04",
+      "title": "4-5 時系列分析と異常検知",
+      "quizCount": 8,
+      "contentPath": "content/ch04/sec05.md"
+    },
+    {
+      "id": "ch04-sec06",
+      "chapterId": "ch04",
+      "title": "4-6 BIツールとダッシュボード設計",
+      "quizCount": 8,
+      "contentPath": "content/ch04/sec06.md"
+    },
+    {
+      "id": "ch04-sec07",
+      "chapterId": "ch04",
+      "title": "4-7 A/Bテストと実験設計",
+      "quizCount": 8,
+      "contentPath": "content/ch04/sec07.md"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "active_plan": "G:\\devwork\\ai-data-exam\\.sisyphus\\plans\\phase3-book-glossary-mock-exam.md",
+  "started_at": "2026-05-07T11:38:07.714Z",
+  "session_ids": [
+    "ses_20043efa2ffehT0xJAqVUEX0hQ",
+    "ses_1fc88c49fffesbBoyy6dq4pHE1"
+  ],
+  "session_origins": {
+    "ses_20043efa2ffehT0xJAqVUEX0hQ": "direct",
+    "ses_1fc88c49fffesbBoyy6dq4pHE1": "direct"
+  },
+  "plan_name": "phase3-book-glossary-mock-exam",
+  "agent": "atlas",
+  "task_sessions": {
+    "todo:3": {
+      "task_key": "todo:3",
+      "task_label": "3",
+      "task_title": "第4〜7章の教本文本を専門学習レベルへ増補",
+      "session_id": "ses_1fba124f4ffei1qchP1oGatG5y",
+      "agent": "Sisyphus-Junior",
+      "category": "writing",
+      "updated_at": "2026-05-07T23:35:10.267Z"
+    }
+  }
+}

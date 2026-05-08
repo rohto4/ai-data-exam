@@ -1,0 +1,55 @@
+{
+  "chapterId": "ch05",
+  "title": "第5章 機械学習の基礎",
+  "sections": [
+    {
+      "id": "ch05-sec01",
+      "chapterId": "ch05",
+      "title": "5-1 機械学習の分類と適用場面",
+      "quizCount": 10,
+      "contentPath": "content/ch05/sec01.md"
+    },
+    {
+      "id": "ch05-sec02",
+      "chapterId": "ch05",
+      "title": "5-2 前処理と特徴量エンジニアリング",
+      "quizCount": 10,
+      "contentPath": "content/ch05/sec02.md"
+    },
+    {
+      "id": "ch05-sec03",
+      "chapterId": "ch05",
+      "title": "5-3 分類アルゴリズム（決定木、SVM、ブースティング）",
+      "quizCount": 10,
+      "contentPath": "content/ch05/sec03.md"
+    },
+    {
+      "id": "ch05-sec04",
+      "chapterId": "ch05",
+      "title": "5-4 回帰アルゴリズムとアンサンブル学習",
+      "quizCount": 8,
+      "contentPath": "content/ch05/sec04.md"
+    },
+    {
+      "id": "ch05-sec05",
+      "chapterId": "ch05",
+      "title": "5-5 クラスタリングと次元削減",
+      "quizCount": 8,
+      "contentPath": "content/ch05/sec05.md"
+    },
+    {
+      "id": "ch05-sec06",
+      "chapterId": "ch05",
+      "title": "5-6 モデル評価と性能指標",
+      "quizCount": 10,
+      "contentPath": "content/ch05/sec06.md"
+    },
+    {
+      "id": "ch05-sec07",
+      "chapterId": "ch05",
+      "title": "5-7 機械学習パイプラインの構築",
+      "quizCount": 8,
+      "contentPath": "content/ch05/sec07.md"
+    }
+  ]
+}

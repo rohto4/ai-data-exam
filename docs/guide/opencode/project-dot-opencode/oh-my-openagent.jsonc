@@ -37,28 +37,30 @@
   // Conductor: 重めの統括。明示指定時だけ使う。
   "agents": {
     "sisyphus": {
-      "model": "chutes/kimi-k2.5-tee",
+      "model": "openai/gpt-5.4",
       "fallback_models": [
+        "chutes/kimi-k2.5-tee",
         "chutes/qwen3-32b-tee"
       ]
     },
 
     // Main implementer: コーディング特化
     "hephaestus": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4",
       "fallback_models": [
-        "chutes/qwen3-coder-next-tee"
+        "chutes/qwen3-coder-next-tee",
+        "chutes/qwen3-32b-tee"
       ]
     },
 
     // Planner: Thinking 特化で計画立案
     "prometheus": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4",
       "fallback_models": [
-        "chutes/deepseek-r1-0528-tee"
+        "chutes/deepseek-r1-0528-tee",
+        "chutes/qwen3-32b-tee"
       ],
       "prompt_append": "Always propose a verifiable plan (files, commands, success criteria)."
-    },
 
     // Read-only architecture/debug: 深い推論
     "oracle": {
@@ -110,9 +112,10 @@
 
     // Documentation / longform: 長文脈モデル
     "atlas": {
-      "model": "chutes/qwen3-32b-tee",
+      "model": "openai/gpt-5.4",
       "fallback_models": [
-        "chutes/kimi-k2.5-tee"
+        "chutes/kimi-k2.5-tee",
+        "chutes/qwen3-32b-tee"
       ]
     }
   },

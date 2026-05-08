@@ -1,0 +1,48 @@
+{
+  "chapterId": "ch08",
+  "title": "第8章 AIエージェントとMLOps",
+  "sections": [
+    {
+      "id": "ch08-sec01",
+      "chapterId": "ch08",
+      "title": "8-1 AIエージェントの概念とアーキテクチャ",
+      "quizCount": 10,
+      "contentPath": "content/ch08/sec01.md"
+    },
+    {
+      "id": "ch08-sec02",
+      "chapterId": "ch08",
+      "title": "8-2 Function Callingとツール使用",
+      "quizCount": 10,
+      "contentPath": "content/ch08/sec02.md"
+    },
+    {
+      "id": "ch08-sec03",
+      "chapterId": "ch08",
+      "title": "8-3 MLOpsの基盤とライフサイクル",
+      "quizCount": 10,
+      "contentPath": "content/ch08/sec03.md"
+    },
+    {
+      "id": "ch08-sec04",
+      "chapterId": "ch08",
+      "title": "8-4 CI/CDパイプラインと自動化",
+      "quizCount": 8,
+      "contentPath": "content/ch08/sec04.md"
+    },
+    {
+      "id": "ch08-sec05",
+      "chapterId": "ch08",
+      "title": "8-5 モデルモニタリングとドリフト検知",
+      "quizCount": 8,
+      "contentPath": "content/ch08/sec05.md"
+    },
+    {
+      "id": "ch08-sec06",
+      "chapterId": "ch08",
+      "title": "8-6 実験管理とモデルバージョニング",
+      "quizCount": 8,
+      "contentPath": "content/ch08/sec06.md"
+    }
+  ]
+}

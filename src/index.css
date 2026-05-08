@@ -1,12 +1,40 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #03A9F4;
-  --color-primary-dark: #0288D1;
-  --color-primary-light: #B3E5FC;
+  /* パステル水色ベースカラーパレット */
+  --color-bg-primary: #F0F9FF;
+  --color-bg-secondary: #FFFFFF;
+  --color-primary: #7DD3FC;
+  --color-primary-dark: #0284C7;
+  --color-primary-light: #BAE6FD;
+  --color-border: #BAE6FD;
+  --color-text-primary: #1F2937;
+  --color-text-secondary: #6B7280;
 }
 
 body {
   font-family: 'Noto Sans JP', 'Hiragino Sans', 'Meiryo', sans-serif;
-  @apply bg-gray-50 text-gray-900 antialiased;
+  background-color: #F0F9FF;
+  color: #1F2937;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F9FF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #BAE6FD;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7DD3FC;
 }
